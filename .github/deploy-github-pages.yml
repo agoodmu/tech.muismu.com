@@ -5,6 +5,7 @@ on:
     branches:
       - main
   workflow_dispatch:
+
 env:
   REPO_NAME: ${{ github.event.repository.name }}
   REPO_OWNER: ${{ github.repository_owner }}
@@ -33,7 +34,8 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
 
       - run: npm ci
-      - run: hugo --baseURL https://${REPO_OWNER}.github.io/${REPO_NAME} --minify
+#      - run: hugo --baseURL https://${REPO_OWNER}.github.io/${REPO_NAME} --minify
+      - run: hugo --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
