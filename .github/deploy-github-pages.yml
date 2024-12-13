@@ -1,12 +1,10 @@
 name: Deployment to GitHub Pages
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
-  pull_request:
-
+  workflow_dispatch:
 env:
   REPO_NAME: ${{ github.event.repository.name }}
   REPO_OWNER: ${{ github.repository_owner }}
