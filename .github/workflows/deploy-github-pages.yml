@@ -31,11 +31,10 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+#          cache-dependency-path: '**/package-lock.json'
 
       - run: npm ci
-#      - run: hugo --baseURL https://${REPO_OWNER}.github.io/${REPO_NAME} --minify
-      - run: hugo --minify
+      - run: hugo --baseURL https://tech.muismu.com --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
